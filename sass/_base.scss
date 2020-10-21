@@ -33,3 +33,14 @@ body {
     font-weight: 300;
     line-height: 1.6;
 }
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // byt responsivni uz od zacatku
+    grid-template-columns:
+        [sidebar-start] 8rem
+        [sidebar-end full-start] minmax(6rem, 1fr)
+        [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])// fixnuto zhruba na 1140/8px
+        [center-end] minmax(6rem, 1fr) [full-end];
+                        // ty 1fr jsou na vycentrovani tech 8 mezi sidebarem a koncem viewportu
+}
